@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sireneoversigt</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<h1>Alle Sirener</h1>
+
+<button onclick="openCreateModal()">Opret Sirene</button>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Status</th>
+        <th>Disabled</th>
+        <th>Handling</th>
+    </tr>
+    </thead>
+    <tbody id="sirens-tbody">
+    <!-- Fyldes med JS -->
+    </tbody>
+
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Rediger Sirene</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id" />
+                <label for="edit-lat">Latitude:</label>
+                <input type="number" id="edit-lat" step="any" required />
+                <label for="edit-lon">Longitude:</label>
+                <input type="number" id="edit-lon" step="any" required />
+                <label for="edit-status">Status:</label>
+                <select id="edit-status">
+                    <option value="FRED">FRED</option>
+                    <option value="FARE">FARE</option>
+                    <option value="DISABLED">DISABLED</option>
+                </select>
+                <br/><br/>
+                <button type="submit">Gem</button>
+                <button type="button" onclick="closeModal()">Annuller</button>
+            </form>
+        </div>
+    </div>
+
+</table>
+
+<!-- Opret Sirene Modal -->
+<div id="create-siren-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Opret Sirene</h2>
+        <form id="create-siren-form">
+            <label for="create-lat">Latitude:</label>
+            <input type="number" id="create-lat" step="any" required />
+
+            <label for="create-lon">Longitude:</label>
+            <input type="number" id="create-lon" step="any" required />
+
+            <label for="create-status">Status:</label>
+            <select id="create-status" required>
+                <option value="FRED">FRED</option>
+                <option value="FARE">FARE</option>
+                <option value="DISABLED">DISABLED</option>
+            </select>
+
+            <br><br>
+            <button type="submit">Opret</button>
+            <button type="button" onclick="closeCreateModal()">Annuller</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="js/alleSirener.js"></script>
+</body>
+</html>

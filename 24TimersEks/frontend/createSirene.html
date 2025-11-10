@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opret Sirene</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<h1>Opret ny Sirene</h1>
+<form id="create-siren-form">
+  <label for="latitude">Latitude:</label>
+  <input type="number" id="latitude" step="any" required>
+  <br>
+  <label for="longitude">Longitude:</label>
+  <input type="number" id="longitude" step="any" required>
+  <br>
+  <label for="status">Status:</label>
+  <select id="status">
+    <option value="FRED">FRED</option>
+    <option value="FARE">FARE</option>
+    <option value="DISABLED">DISABLED</option>
+  </select>
+  <br><br>
+  <button type="submit">Opret Sirene</button>
+</form>
+
+<script src="js/createSirene.js"></script>
+</body>
+</html>
