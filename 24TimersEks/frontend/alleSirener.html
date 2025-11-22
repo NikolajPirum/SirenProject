@@ -2,54 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Sireneoversigt</title>
+    <title>LAFD Sirene Oversigt</title>
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<h1>Alle Sirener</h1>
+<header>
+    <nav id="header-nav">
+        <img id="fire-logo" src="images/LA_firefighter_logo.jpg" alt="LAFD logo" title="Los Angeles Fire Department">
+        <h1 class="header-title">LAFD Sirene Styring</h1>
+        <button id="createSirenBtn" onclick="openCreateModal()">Opret Sirene</button>
+    </nav>
+</header>
 
-<button onclick="openCreateModal()">Opret Sirene</button>
+<main class="container">
+    <h2>Alle Registrerede Sirener</h2>
 
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Status</th>
-        <th>Disabled</th>
-        <th>Handling</th>
-    </tr>
-    </thead>
-    <tbody id="sirens-tbody">
-    <!-- Fyldes med JS -->
-    </tbody>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Status</th>
+            <th>Disabled</th>
+            <th>Handling</th>
+        </tr>
+        </thead>
+        <tbody id="sirens-tbody">
+        </tbody>
+    </table>
+</main>
 
-    <div id="edit-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2>Rediger Sirene</h2>
-            <form id="edit-form">
-                <input type="hidden" id="edit-id" />
-                <label for="edit-lat">Latitude:</label>
-                <input type="number" id="edit-lat" step="any" required />
-                <label for="edit-lon">Longitude:</label>
-                <input type="number" id="edit-lon" step="any" required />
-                <label for="edit-status">Status:</label>
-                <select id="edit-status">
-                    <option value="FRED">FRED</option>
-                    <option value="FARE">FARE</option>
-                    <option value="DISABLED">DISABLED</option>
-                </select>
-                <br/><br/>
-                <button type="submit">Gem</button>
-                <button type="button" onclick="closeModal()">Annuller</button>
-            </form>
-        </div>
+<div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Rediger Sirene</h2>
+        <form id="edit-form">
+            <input type="hidden" id="edit-id" />
+            <label for="edit-lat">Latitude:</label>
+            <input type="number" id="edit-lat" step="any" required />
+            <label for="edit-lon">Longitude:</label>
+            <input type="number" id="edit-lon" step="any" required />
+            <label for="edit-status">Status:</label>
+            <select id="edit-status">
+                <option value="FRED">FRED</option>
+                <option value="FARE">FARE</option>
+                <option value="DISABLED">DISABLED</option>
+            </select>
+            <br/><br/>
+            <button type="submit" class="save-btn">Gem</button>
+            <button type="button" class="cancel-btn" onclick="closeModal()">Annuller</button>
+        </form>
     </div>
+</div>
 
-</table>
-
-<!-- Opret Sirene Modal -->
 <div id="create-siren-modal" class="modal hidden">
     <div class="modal-content">
         <h2>Opret Sirene</h2>
@@ -68,8 +73,8 @@
             </select>
 
             <br><br>
-            <button type="submit">Opret</button>
-            <button type="button" onclick="closeCreateModal()">Annuller</button>
+            <button type="submit" class="create-btn">Opret</button>
+            <button type="button" class="cancel-btn" onclick="closeCreateModal()">Annuller</button>
         </form>
     </div>
 </div>
